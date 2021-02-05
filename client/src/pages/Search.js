@@ -4,6 +4,8 @@ import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
 import Hero from "../components/Hero";
 import ResultsList from "../components/SearchResults/index";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
 class Search extends Component {
   constructor(props) {
@@ -51,7 +53,11 @@ render() {
           handleSearch={this.handleSearch}
           handleFormSubmit={this.handleFormSubmit}
         />
-        <ResultsList results={this.state.results}/>
+       <Row>
+         <Col size="md-12">
+         <ResultsList results={this.state.results}/>
+         </Col>
+       </Row>
       </Container>
 
     </div>

@@ -1,16 +1,22 @@
 import React from "react";
-import "./style.css";
+import BookCard from "../BookCard/index"
 
-function SearchResults(props) {
-  return (
-    <ul className="list-group search-results">
-      {props.results.map(result => (
-        <li key={result} className="list-group-item">
-          <img alt="Dog" src={result} className="img-fluid" />
-        </li>
-      ))}
-    </ul>
-  );
+function ResultList(props) {
+    return (
+        <div className="list">
+            {
+                props.results.map((result, i) => {
+                    return <BookCard
+                        key={i}
+                        image={result.volumeInfo.imageLinks.thumbnail}
+                        title={result.volumeInfo.title}
+                        author={result.volumeInfo.authors}
+                        published={result.volumeInfo.publishedDate}
+                    />
+                })
+            }
+        </div>
+    )
 }
 
-export default SearchResults;
+export default ResultList;

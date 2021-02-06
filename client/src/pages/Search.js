@@ -19,6 +19,7 @@ class Search extends Component {
   componentDidMount() {
    this.searchBook();
   }
+  
 
   searchBook = query => {
     API.getBook(query)

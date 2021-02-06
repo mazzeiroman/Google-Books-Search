@@ -16,7 +16,7 @@ function BookCard(props) {
                                 <h2 className="card-title">{props.title}</h2>
                                 <h3 className="card-text">{props.author}</h3>
                                 <p className="card-text">{props.published}</p>
-                                <button className="btn btn-primary"> save</button>
+                                <button onClick={() => props.handleSave(result)}  className="btn btn-primary"> save</button>
                             </div>
                         </div>
                     </Col>
